@@ -170,6 +170,7 @@ function Main()
     options.menu_subtitle = "~r~NATIVE TESTING ~b~menu 5"
     ClearMenu()
 	Menu.addButton("~r~clubhouse decorations", "bikerClubhousInteriorDecorationsMenu", nil)
+	Menu.addButton("~r~IMP//EXP decorations", "importExportInteriorDecorationsMenu", nil)
 
 end
 function bikerClubhousInteriorDecorationsMenu()
@@ -185,8 +186,23 @@ function bikerClubhousInteriorDecorationsMenu()
 	Menu.addButton("~g~furnishings", "bikerClubhousfurnishingsMenu", nil)
 	Menu.addButton("~r~disable all Furnishings props", "disableInteriorFurnishings", interiorID)	
 	Menu.addButton("~g~Decoration", "bikerClubhouseDecorativeMenu", nil)
-	Menu.addButton("~r~disable all Decoration props", "disableInteriorDecorative", interiorID)	
-	Menu.addButton("~r~BACK TO MAIN MENU", "Main", nil)
+	Menu.addButton("~r~disable all Decoration props", "disableInteriorDecorative", interiorID)
+	Menu.addButton("~g~ModBooth", "bikerClubhouseModBoothMenu", nil)
+	Menu.addButton("~r~disable all Decoration props", "disableInteriorDecorative", interiorID)
+	Menu.addButton("~g~enable modBooth", "clubhouseModBooth", nil)
+	Menu.addButton("~r~disable modBooth", "disableInteriorModBooth", nil)
+	Menu.addButton("~o~BACK TO MAIN MENU", "Main", nil)
+
+end
+
+function importExportInteriorDecorationsMenu()
+    DisplayHelpText("Use ~INPUT_CELLPHONE_UP~ ~INPUT_CELLPHONE_DOWN~ to ~y~move~w~ and ~y~Enter~w~ to ~r~select")
+	Notify("Press ~r~F5 ~w~to ~g~open~w~/~r~close~w~!")
+    options.menu_title = "~r~TESTING menu"
+    options.menu_subtitle = "~r~NATIVE TESTING ~b~menu 5"
+    ClearMenu()
+    Menu.addButton("~g~Import Export styles", "impExpStyleMenu", nil)
+	Menu.addButton("~o~BACK TO MAIN MENU", "Main", nil)
 
 end
 function bikerClubhousMuralsMenu()
@@ -198,7 +214,7 @@ function bikerClubhousMuralsMenu()
 	--Menu.addButton("~g~enable interior prop", "", nil)
 	Menu.addButton("choose your mural", "clubhouseMural", nil)
 	Menu.addButton("~r~disable all mural props", "disableInteriorMurals", interiorID)
-	Menu.addButton("~r~BACK TO MAIN MENU", "Main", nil)	
+	Menu.addButton("~o~BACK TO MAIN MENU", "Main", nil)	
 end
 function bikerClubhousWallsMenu()
     DisplayHelpText("Use ~INPUT_CELLPHONE_UP~ ~INPUT_CELLPHONE_DOWN~ to ~y~move~w~ and ~y~Enter~w~ to ~r~select")
@@ -209,7 +225,7 @@ function bikerClubhousWallsMenu()
 	--Menu.addButton("~g~enable interior prop", "", nil)
 	Menu.addButton("choose your walls", "clubhouseWalls", nil)
 	Menu.addButton("~r~disable all wall props", "disableInteriorWalls", interiorID)
-	Menu.addButton("~r~BACK TO MAIN MENU", "Main", nil)    	
+	Menu.addButton("~o~BACK TO MAIN MENU", "Main", nil)    	
 end
 function bikerClubhousfurnishingsMenu()
     DisplayHelpText("Use ~INPUT_CELLPHONE_UP~ ~INPUT_CELLPHONE_DOWN~ to ~y~move~w~ and ~y~Enter~w~ to ~r~select")
@@ -220,7 +236,7 @@ function bikerClubhousfurnishingsMenu()
 	--Menu.addButton("~g~enable interior prop", "", nil)
 	Menu.addButton("choose your Furnishings", "clubhouseFurnishings", nil)
 	Menu.addButton("~r~disable all Furnishings props", "disableInteriorFurnishings", interiorID)
-	Menu.addButton("~r~BACK TO MAIN MENU", "Main", nil)    	
+	Menu.addButton("~o~BACK TO MAIN MENU", "Main", nil)    	
 end
 function bikerClubhouseDecorativeMenu()
     DisplayHelpText("Use ~INPUT_CELLPHONE_UP~ ~INPUT_CELLPHONE_DOWN~ to ~y~move~w~ and ~y~Enter~w~ to ~r~select")
@@ -231,7 +247,31 @@ function bikerClubhouseDecorativeMenu()
 	--Menu.addButton("~g~enable interior prop", "", nil)
 	Menu.addButton("choose your Decoration", "clubhouseDecorative", nil)
 	Menu.addButton("~r~disable all Decoration props", "disableInteriorDecorative", interiorID)
-	Menu.addButton("~r~BACK TO MAIN MENU", "Main", nil)    	
+	Menu.addButton("~o~BACK TO MAIN MENU", "Main", nil)    	
+end
+
+function impExpStyleMenu()
+    DisplayHelpText("Use ~INPUT_CELLPHONE_UP~ ~INPUT_CELLPHONE_DOWN~ to ~y~move~w~ and ~y~Enter~w~ to ~r~select")
+	Notify("Press ~r~F5 ~w~to ~g~open~w~/~r~close~w~!")
+    options.menu_title = "~r~TESTING menu"
+    options.menu_subtitle = "~r~NATIVE TESTING ~b~menu 5"
+    ClearMenu()
+	--Menu.addButton("~g~enable interior prop", "", nil)
+    Menu.addButton("~g~enable basic style", "enableBasicStyleSet", nil)
+    Menu.addButton("~r~disable basic style", "disableBasicStyleSet", nil)
+    Menu.addButton("~g~enable Branded style", "enableBrandedStyleSet", nil)
+    Menu.addButton("~r~disable Branded style", "disableBrandedStyleSet", nil)
+    Menu.addButton("~g~enable pump set", "enablePumpSet", nil)
+	Menu.addButton("~r~disable pump set", "disableenablePumpSet", nil)
+    Menu.addButton("~g~enable larg garage set 1", "enableLargeGarageSet", nil)
+	Menu.addButton("~r~disable large garage set 1", "disableLargeGarageSet", nil)
+    Menu.addButton("~g~enable larg garage set 2", "enableLargeGarageSet2", nil)
+	Menu.addButton("~r~disable large garage set 2", "disableLargeGarageSet2", nil)
+    Menu.addButton("~g~enable larg garage set 3", "enableLargeGarageSet3", nil)
+	Menu.addButton("~r~disable large garage set 3", "disableLargeGarageSet3", nil)
+    Menu.addButton("~g~enable larg garage set 4", "enableLargeGarageSet4", nil)
+	Menu.addButton("~r~disable large garage set 4", "disableLargeGarageSet4", nil)	
+	Menu.addButton("~o~BACK TO MAIN MENU", "Main", nil)	
 end
 function clubhouseMural()
     options.menu_title = "~r~TESTING menu"
@@ -246,7 +286,7 @@ function clubhouseMural()
 	Menu.addButton("mural_07", "mural", 7)
 	Menu.addButton("mural_08", "mural", 8)
 	Menu.addButton("mural_09", "mural", 9)
-	Menu.addButton("~r~BACK TO MAIN MENU", "Main", nil)	
+	Menu.addButton("~o~BACK TO MAIN MENU", "Main", nil)	
 end
 function clubhouseWalls()
     options.menu_title = "~r~TESTING menu"
@@ -254,7 +294,7 @@ function clubhouseWalls()
     ClearMenu()
 	Menu.addButton("wall_01", "walls", 1)
 	Menu.addButton("wall_02", "walls", 2)
-	Menu.addButton("~r~BACK TO MAIN MENU", "Main", nil)	
+	Menu.addButton("~o~BACK TO MAIN MENU", "Main", nil)	
 end
 function clubhouseFurnishings()
     options.menu_title = "~r~TESTING menu"
@@ -262,7 +302,7 @@ function clubhouseFurnishings()
     ClearMenu()
 	Menu.addButton("furnishings_01", "furnishings", 1)
 	Menu.addButton("furnishings_02", "furnishings", 2)
-	Menu.addButton("~r~BACK TO MAIN MENU", "Main", nil)	
+	Menu.addButton("~o~BACK TO MAIN MENU", "Main", nil)	
 end
 function clubhouseDecorative()
     options.menu_title = "~r~TESTING menu"
@@ -270,8 +310,89 @@ function clubhouseDecorative()
     ClearMenu()
 	Menu.addButton("Decorative_01", "decorative", 1)
 	Menu.addButton("Decorative_02", "decorative", 2)
-	Menu.addButton("~r~BACK TO MAIN MENU", "Main", nil)	
+	Menu.addButton("~o~BACK TO MAIN MENU", "Main", nil)	
 end
+function clubhouseModBooth()
+  EnableInteriorProp(interiorID, "Mod_Booth")
+  RefreshInterior(interiorID)
+end
+
+function disableInteriorModBooth()
+  DisableInteriorProp(interiorID, "Mod_Booth")
+  RefreshInterior(interiorID)
+end
+function enableBasicStyleSet()
+  EnableInteriorProp(interiorID, "Basic_style_set")
+  RefreshInterior(interiorID)
+end
+function disableBasicStyleSet()
+  DisableInteriorProp(interiorID, "Basic_style_set")
+  RefreshInterior(interiorID)
+end
+function enableBrandedStyleSet()
+  EnableInteriorProp(interiorID, "Branded_style_set")
+  RefreshInterior(interiorID)
+end
+function disableBrandedStyleSet()
+  DisableInteriorProp(interiorID, "Branded_style_set")
+  RefreshInterior(interiorID)
+end
+
+function enablePumpSet()
+  EnableInteriorProp(interiorID, "pump_01")
+  EnableInteriorProp(interiorID, "pump_06")
+  EnableInteriorProp(interiorID, "pump_07")
+  EnableInteriorProp(interiorID, "pump_08")
+  EnableInteriorProp(interiorID, "pump_02")
+  EnableInteriorProp(interiorID, "pump_03")
+  EnableInteriorProp(interiorID, "pump_04")
+  EnableInteriorProp(interiorID, "pump_05")
+  RefreshInterior(interiorID)
+end
+function disableenablePumpSet()
+  DisableInteriorProp(interiorID, "pump_01")
+  DisableInteriorProp(interiorID, "pump_06")
+  DisableInteriorProp(interiorID, "pump_07")
+  DisableInteriorProp(interiorID, "pump_08")  
+  DisableInteriorProp(interiorID, "pump_02")
+  DisableInteriorProp(interiorID, "pump_03")
+  DisableInteriorProp(interiorID, "pump_04")
+  DisableInteriorProp(interiorID, "pump_05")
+  RefreshInterior(interiorID)
+end
+function enableLargeGarageSet()
+  EnableInteriorProp(interiorID, "Garage_Decor_01")
+  RefreshInterior(interiorID)
+end
+function disableLargeGarageSet()
+  DisableInteriorProp(interiorID, "Garage_Decor_01")  
+  RefreshInterior(interiorID)
+end
+function enableLargeGarageSet2()
+  EnableInteriorProp(interiorID, "Garage_Decor_02")
+  RefreshInterior(interiorID)
+end
+function disableLargeGarageSet2()
+  DisableInteriorProp(interiorID, "Garage_Decor_02")  
+  RefreshInterior(interiorID)
+end
+function enableLargeGarageSet3()
+  EnableInteriorProp(interiorID, "Garage_Decor_03")
+  RefreshInterior(interiorID)
+end
+function disableLargeGarageSet3()
+  DisableInteriorProp(interiorID, "Garage_Decor_03")  
+  RefreshInterior(interiorID)
+end
+function enableLargeGarageSet4()
+  EnableInteriorProp(interiorID, "Garage_Decor_04")
+  RefreshInterior(interiorID)
+end
+function disableLargeGarageSet4()
+  DisableInteriorProp(interiorID, "Garage_Decor_04")  
+  RefreshInterior(interiorID)
+end
+
 function mural(n)
  bikerClubhousInteriorDecorationsMenu()
  mural1 = "mural_0"..n
@@ -490,3 +611,7 @@ Citizen.CreateThread(function()
      end
 	end
  end)
+	
+	
+	
+     
